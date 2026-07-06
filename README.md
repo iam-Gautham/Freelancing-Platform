@@ -1,70 +1,155 @@
-# Getting Started with Create React App
+# TaskHub Freelancing Platform
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+TaskHub is a full-stack freelancing marketplace where clients can post jobs and review bids, while freelancers can browse open work and submit proposals. The project uses a Spring Boot backend, a React frontend, and a local MySQL database.
 
-## Available Scripts
+## What The Project Does
 
-In the project directory, you can run:
+- Supports user registration and login for two roles: client and freelancer.
+- Lets clients post jobs, view the jobs they created, and inspect bids for each job.
+- Lets freelancers view open jobs and place bids with a proposal message.
+- Stores users, jobs, and bids in MySQL.
 
-### `npm start`
+## Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Backend: Java 17, Spring Boot 3.2, Spring Web, Spring Data JPA, Spring Security
+- Database: MySQL
+- Frontend: React 19, React Router, Axios, Create React App
+- Tooling: Maven, npm
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Key Features
 
-### `npm test`
+- User registration and login with role-based routing on the frontend.
+- BCrypt password hashing on the backend.
+- Client dashboard for posting jobs and viewing submitted bids.
+- Freelancer dashboard for browsing open jobs and submitting bids.
+- REST API for users, jobs, and bids.
+- CORS configured for local development between the React app and the backend.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## API Overview
 
-### `npm run build`
+The backend exposes these main endpoints:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- `POST /api/users/register` - register a new user.
+- `POST /api/users/login` - authenticate a user.
+- `POST /api/jobs/post` - create a new job.
+- `GET /api/jobs/open` - list open jobs.
+- `GET /api/jobs/client/{clientId}` - list jobs posted by a client.
+- `POST /api/jobs/bid` - place a bid on a job.
+- `GET /api/jobs/{jobId}/bids` - list bids for a job.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Authentication is currently handled with backend password verification plus frontend `sessionStorage` state. The project does not use JWT or a dedicated session management system.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Database
 
-### `npm run eject`
+The backend is configured to use a local MySQL database named `freelance_platform`.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Default development settings in `freelance-backend/src/main/resources/application.properties`:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Server port: `8080`
+- Database URL: `jdbc:mysql://localhost:3306/freelance_platform`
+- Username: `root`
+- Password: `root`
+- Hibernate schema mode: `update`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Update these values if your local MySQL setup is different.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Project Structure
 
-## Learn More
+```text
+.
+├── freelance-backend/
+│   ├── src/main/java/com/freelanceapp/
+│   │   ├── config/
+│   │   ├── controller/
+│   │   ├── dto/
+│   │   ├── model/
+│   │   ├── repository/
+│   │   └── service/
+│   └── src/main/resources/application.properties
+└── freelance-frontend/
+	└── src/
+		├── components/
+		├── App.js
+		└── index.js
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Prerequisites
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Java 17 or later
+- Maven
+- Node.js and npm
+- MySQL server running locally
 
-### Code Splitting
+## Setup
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+1. Create the MySQL database if it does not already exist:
 
-### Analyzing the Bundle Size
+```sql
+CREATE DATABASE freelance_platform;
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+2. Check the backend database credentials in `freelance-backend/src/main/resources/application.properties` and update them if needed.
 
-### Making a Progressive Web App
+3. Install frontend dependencies:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```bash
+cd freelance-frontend
+npm install
+```
 
-### Advanced Configuration
+4. Build the backend if you want to verify it compiles before running:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```bash
+cd freelance-backend
+mvn clean install
+```
 
-### Deployment
+## Run Locally
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Open two terminals and start each app separately.
 
-### `npm run build` fails to minify
+### Backend
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```bash
+cd freelance-backend
+mvn spring-boot:run
+```
+
+The API runs at `http://localhost:8080`.
+
+### Frontend
+
+```bash
+cd freelance-frontend
+npm start
+```
+
+The React app runs at `http://localhost:3000`.
+
+## Screenshots
+
+The current screenshots in the repository are:
+
+- [Register as Freelancer](screenshots/Screenshot%202026-07-06%20175136.png)
+- [Register as Client](screenshots/Screenshot%202026-07-06%20175318.png)
+
+## Contributing
+
+Contributions are welcome. A simple workflow is:
+
+1. Fork the repository.
+2. Create a feature branch.
+3. Make your changes and verify the app still runs locally.
+4. Open a pull request with a clear summary of the change.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Acknowledgements
+
+- Spring Boot
+- React
+- Axios
+- React Router
+- Create React App

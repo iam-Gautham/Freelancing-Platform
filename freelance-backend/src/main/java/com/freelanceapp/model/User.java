@@ -12,7 +12,6 @@ public class User {
     private String email;
     private String userType;
     
-    // Getters and Setters
     public Integer getUserId() { return userId; }
     public void setUserId(Integer userId) { this.userId = userId; }
     public String getUsername() { return username; }

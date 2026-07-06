@@ -12,19 +12,15 @@ public class UserService {
     @Autowired private PasswordEncoder passwordEncoder;
 
     public User registerUser(User user) {
-        // Hash the password before saving
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         return userRepository.save(user);
     }
     
     public User loginUser(String username, String plainTextPassword) {
-        // Find user by username first
         User user = userRepository.findByUsername(username).orElse(null);
         if (user != null && passwordEncoder.matches(plainTextPassword, user.getPassword())) {
-            // If user exists and passwords match, return user
             return user;
         }
-        // Otherwise, return null
         return null;
     }
 }

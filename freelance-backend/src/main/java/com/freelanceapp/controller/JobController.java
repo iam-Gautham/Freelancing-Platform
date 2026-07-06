@@ -1,4 +1,3 @@
-// File: com/freelanceapp/controller/JobController.java
 package com.freelanceapp.controller;
 
 import com.freelanceapp.dto.BidRequest;
@@ -54,7 +53,6 @@ public class JobController {
         return ResponseEntity.ok(savedBid);
     }
 
-    // ✅ Added new method to fetch bids for a specific job
     @GetMapping("/{jobId}/bids")
     public ResponseEntity<List<BidResponseDTO>> getBidsForJob(@PathVariable Integer jobId) {
         return ResponseEntity.ok(jobService.getBidsByJobId(jobId));

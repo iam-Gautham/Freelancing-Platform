@@ -13,7 +13,6 @@ public class Job {
     private Double budget;
     private String status = "open";
 
-    // Getters and Setters
     public Integer getJobId() { return jobId; }
     public void setJobId(Integer jobId) { this.jobId = jobId; }
     public Integer getClientId() { return clientId; }

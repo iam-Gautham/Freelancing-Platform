@@ -1,4 +1,3 @@
-// File: com/freelanceapp/dto/BidRequest.java
 package com.freelanceapp.dto;
 
 public class BidRequest {
@@ -7,7 +6,6 @@ public class BidRequest {
     private Double amount;
     private String proposal;
 
-    // Getters and Setters
     public Integer getJobId() { return jobId; }
     public void setJobId(Integer jobId) { this.jobId = jobId; }
     public Integer getFreelancerId() { return freelancerId; }

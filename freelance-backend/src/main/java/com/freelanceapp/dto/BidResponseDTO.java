@@ -5,7 +5,6 @@ public class BidResponseDTO {
     private String proposal;
     private String freelancerUsername;
     
-    // Getters and Setters
     public Double getBidAmount() { return bidAmount; }
     public void setBidAmount(Double bidAmount) { this.bidAmount = bidAmount; }
     public String getProposal() { return proposal; }

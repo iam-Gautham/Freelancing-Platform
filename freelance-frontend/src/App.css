@@ -1,4 +1,3 @@
-/* --- Global Styles & Color Palette --- */
 :root {
   --primary-color: #6a11cb;
   --secondary-color: #2575fc;
@@ -27,7 +26,6 @@ body {
   min-height: 100vh;
 }
 
-/* --- Container Styles --- */
 .form-container,
 .dashboard-container {
   background: var(--surface-color);
@@ -48,7 +46,6 @@ h2 {
   letter-spacing: 1px;
 }
 
-/* --- Form Element Styles --- */
 input,
 select,
 textarea {
@@ -93,7 +90,6 @@ button:hover {
   opacity: 0.9;
 }
 
-/* --- Link & Navigation Styles --- */
 p {
   text-align: center;
   color: var(--text-color-muted);
@@ -109,7 +105,6 @@ a:hover {
   text-decoration: underline;
 }
 
-/* --- Dashboard Specific Styles --- */
 .dashboard-header {
   display: flex;
   justify-content: space-between;
@@ -126,7 +121,7 @@ a:hover {
 
 .dashboard-header button,
 td button {
-  width: auto; /* Override full width for smaller buttons */
+  width: auto;
 }
 
 table {

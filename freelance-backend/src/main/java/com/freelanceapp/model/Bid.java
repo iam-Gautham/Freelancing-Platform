@@ -1,4 +1,3 @@
-// File: com/freelanceapp/model/Bid.java
 package com.freelanceapp.model;
 
 import jakarta.persistence.*;
@@ -14,7 +13,6 @@ public class Bid {
     private Double bidAmount;
     private String proposal;
 
-    // Getters and Setters
     public Integer getBidId() { return bidId; }
     public void setBidId(Integer bidId) { this.bidId = bidId; }
     public Integer getJobId() { return jobId; }

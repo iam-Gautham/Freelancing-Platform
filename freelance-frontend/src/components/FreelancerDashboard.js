@@ -1,4 +1,3 @@
-// File: freelance-frontend/src/components/FreelancerDashboard.js
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';

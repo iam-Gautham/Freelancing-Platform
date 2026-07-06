@@ -5,7 +5,6 @@ public class JobPostRequest {
     private String title;
     private String description;
     private Double budget;
-    // Getters and Setters
     public Integer getClientId() { return clientId; }
     public void setClientId(Integer clientId) { this.clientId = clientId; }
     public String getTitle() { return title; }

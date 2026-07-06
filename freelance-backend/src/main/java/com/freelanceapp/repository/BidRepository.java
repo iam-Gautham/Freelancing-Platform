@@ -1,4 +1,3 @@
-// File: com/freelanceapp/repository/BidRepository.java
 package com.freelanceapp.repository;
 
 import java.util.List;

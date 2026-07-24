@@ -14,14 +14,18 @@ public class UserController {
     @Autowired private UserService userService;
 
     @PostMapping("/register")
-    public ResponseEntity<User> registerUser(@RequestBody UserRegistrationRequest req) {
-        User newUser = new User();
-        newUser.setUsername(req.getUsername());
-        newUser.setPassword(req.getPassword());
-        newUser.setEmail(req.getEmail());
-        newUser.setUserType(req.getUserType());
-        User savedUser = userService.registerUser(newUser);
-        return ResponseEntity.ok(savedUser);
+    public ResponseEntity<?> registerUser(@RequestBody UserRegistrationRequest req) {
+        try {
+            User newUser = new User();
+            newUser.setUsername(req.getUsername());
+            newUser.setPassword(req.getPassword());
+            newUser.setEmail(req.getEmail());
+            newUser.setUserType(req.getUserType());
+            User savedUser = userService.registerUser(newUser);
+            return ResponseEntity.ok(savedUser);
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.badRequest().body(java.util.Map.of("message", e.getMessage()));
+        }
     }
 
     @PostMapping("/login")

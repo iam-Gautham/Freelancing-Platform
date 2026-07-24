@@ -2,6 +2,7 @@ package com.freelanceapp.controller;
 
 import com.freelanceapp.dto.BidRequest;
 import com.freelanceapp.dto.BidResponseDTO;
+import com.freelanceapp.dto.FreelancerBidResponseDTO;
 import com.freelanceapp.dto.JobPostRequest;
 import com.freelanceapp.model.Bid;
 import com.freelanceapp.model.Job;
@@ -56,5 +57,16 @@ public class JobController {
     @GetMapping("/{jobId}/bids")
     public ResponseEntity<List<BidResponseDTO>> getBidsForJob(@PathVariable Integer jobId) {
         return ResponseEntity.ok(jobService.getBidsByJobId(jobId));
+    }
+
+    @PostMapping("/bids/{bidId}/accept")
+    public ResponseEntity<Void> acceptBid(@PathVariable Integer bidId) {
+        jobService.acceptBid(bidId);
+        return ResponseEntity.ok().build();
+    }
+
+    @GetMapping("/freelancer/{freelancerId}/bids")
+    public ResponseEntity<List<FreelancerBidResponseDTO>> getBidsForFreelancer(@PathVariable Integer freelancerId) {
+        return ResponseEntity.ok(jobService.getBidsByFreelancerId(freelancerId));
     }
 }

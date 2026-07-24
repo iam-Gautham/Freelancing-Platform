@@ -7,4 +7,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface BidRepository extends JpaRepository<Bid, Integer> {
     List<Bid> findByJobId(Integer jobId);
+    List<Bid> findByFreelancerId(Integer freelancerId);
 }

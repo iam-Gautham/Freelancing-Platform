@@ -6,6 +6,8 @@ com\freelanceapp\dto\BidRequest.class
 com\freelanceapp\model\User.class
 com\freelanceapp\controller\UserController.class
 com\freelanceapp\dto\JobPostRequest.class
+com\freelanceapp\config\DatabaseSeeder.class
+com\freelanceapp\dto\FreelancerBidResponseDTO.class
 com\freelanceapp\dto\BidResponseDTO.class
 com\freelanceapp\dto\UserRegistrationRequest.class
 com\freelanceapp\FreelanceBackendApplication.class

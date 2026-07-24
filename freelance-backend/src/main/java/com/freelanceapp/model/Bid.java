@@ -12,6 +12,7 @@ public class Bid {
     private Integer freelancerId;
     private Double bidAmount;
     private String proposal;
+    private String status = "pending";
 
     public Integer getBidId() { return bidId; }
     public void setBidId(Integer bidId) { this.bidId = bidId; }
@@ -23,4 +24,6 @@ public class Bid {
     public void setBidAmount(Double bidAmount) { this.bidAmount = bidAmount; }
     public String getProposal() { return proposal; }
     public void setProposal(String proposal) { this.proposal = proposal; }
+    public String getStatus() { return status; }
+    public void setStatus(String status) { this.status = status; }
 }

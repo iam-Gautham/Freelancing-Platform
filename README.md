@@ -126,12 +126,28 @@ npm start
 
 The React app runs at `http://localhost:3000`.
 
+## Seed Credentials
+
+On startup, the backend automatically clears the database tables and seeds it with default data. You can log in immediately using the following test accounts:
+
+- **Client Console**: Username `alex_jones` / Password `password`
+- **Freelancer Workspace**: Username `elena_rodriguez` / Password `password`
+
+## Redesigned Premium Features
+
+- **Glassmorphism Theme**: Deep-dark backgrounds with frosted-glass containers, neon borders, and glowing action buttons.
+- **Visual Statistics Panels**: Real-time stats cards tracking total budgets, active jobs, placed bids, and won projects.
+- **Custom Interaction Modals**: No more raw browser alerts or prompts! Placing a proposal or reviewing bids is done via modern React modal sheets.
+- **Search & Budget Filters**: Freelancers can easily search jobs by keywords and filter by minimum budget.
+- **Bid Acceptance Flow**: Clients can review proposals and click "Accept Bid" to hire a freelancer, which automatically closes the job and rejects other bids.
+- **Freelancer Bid Tracker**: Freelancers can track the status (Pending, Accepted, Rejected) of all their bids in real-time.
+
 ## Screenshots
 
-The current screenshots in the repository are:
-
-- [Register as Freelancer](screenshots/Screenshot%202026-07-06%20175136.png)
-- [Register as Client](screenshots/Screenshot%202026-07-06%20175318.png)
+- [Login Screen](screenshots/login_screen.png)
+- [Register Screen](screenshots/register_screen.png)
+- [Client Console & Dashboard](screenshots/client_dashboard.png)
+- [Freelancer Workspace & Opportunities](screenshots/freelancer_dashboard.png)
 
 ## Contributing
 

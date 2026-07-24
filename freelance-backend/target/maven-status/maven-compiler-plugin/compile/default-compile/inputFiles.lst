@@ -1,10 +1,12 @@
 D:\Freelancing_Platform_Project\freelance-backend\src\main\java\com\freelanceapp\dto\LoginRequest.java
+D:\Freelancing_Platform_Project\freelance-backend\src\main\java\com\freelanceapp\dto\FreelancerBidResponseDTO.java
 D:\Freelancing_Platform_Project\freelance-backend\src\main\java\com\freelanceapp\repository\BidRepository.java
 D:\Freelancing_Platform_Project\freelance-backend\src\main\java\com\freelanceapp\config\WebConfig.java
 D:\Freelancing_Platform_Project\freelance-backend\src\main\java\com\freelanceapp\repository\UserRepository.java
 D:\Freelancing_Platform_Project\freelance-backend\src\main\java\com\freelanceapp\dto\BidResponseDTO.java
 D:\Freelancing_Platform_Project\freelance-backend\src\main\java\com\freelanceapp\repository\JobRepository.java
 D:\Freelancing_Platform_Project\freelance-backend\src\main\java\com\freelanceapp\service\JobService.java
+D:\Freelancing_Platform_Project\freelance-backend\src\main\java\com\freelanceapp\config\DatabaseSeeder.java
 D:\Freelancing_Platform_Project\freelance-backend\src\main\java\com\freelanceapp\model\User.java
 D:\Freelancing_Platform_Project\freelance-backend\src\main\java\com\freelanceapp\config\SecurityConfig.java
 D:\Freelancing_Platform_Project\freelance-backend\src\main\java\com\freelanceapp\model\Job.java

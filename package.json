@@ -4,7 +4,7 @@
   "description": "Root package config for TaskHub",
   "scripts": {
     "start": "npm start --prefix freelance-frontend",
-    "build": "npm run build --prefix freelance-frontend",
+    "build": "npm install --prefix freelance-frontend && npm run build --prefix freelance-frontend",
     "test": "npm test --prefix freelance-frontend",
     "install-frontend": "npm install --prefix freelance-frontend"
   }
